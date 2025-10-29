@@ -4,10 +4,10 @@ import google.generativeai as genai
 
 # Configure API key safely
 # You can also set this in Streamlit Secrets for better security
-genai.configure(api_key=st.secrets.get("GOOGLE_API_KEY", "AIzaSyBsfbtaFlzuXr9HPuaz7OJq0k45K6LelKA"))
+genai.configure(api_key=st.secrets.get(".streamlit/secrets.toml:", "AIzaSyBsfbtaFlzuXr9HPuaz7OJq0k45K6LelKA"))
 
 # Model setup
-model = genai.GenerativeModel(
+model = genai.GenerativeModel(  
     "gemini-2.5-flash",
     system_instruction="""
     Your name is Gray, and you are an AI assistant chatbot for the users.
